@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "JustADD",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "description": "一个用于管理和导出收藏文本的插件",
     "default_locale": "zh_CN",
     "permissions": ["storage", "activeTab", "contextMenus", "scripting"],
