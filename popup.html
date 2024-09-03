@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JustADD</title>
+  <style>
+    body { width: 400px; padding: 10px; font-family: Arial, sans-serif; background-color: #f9f9f9; }
+    h2 { color: #333; }
+    ul { list-style-type: none; padding: 0; }
+    li { margin-bottom: 15px; }
+    .quote-card {
+      border: 1px solid #eee;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+    .quote-text { font-style: italic; color: #444; margin-bottom: 5px; }
+    .quote-source { font-size: 0.8em; color: #666; margin-bottom: 5px; }
+    .edit-btn, .delete-btn { 
+      margin-right: 5px;
+      padding: 3px 8px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .edit-btn:hover, .delete-btn:hover {
+      background-color: #e0e0e0;
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+    #exportMarkdownBtn, #exportCsvBtn, #exportJsonBtn, #deleteAllBtn {
+      padding: 5px 10px;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    #exportMarkdownBtn { background-color: #4CAF50; }
+    #exportMarkdownBtn:hover { background-color: #45a049; }
+    #exportCsvBtn { background-color: #2196F3; }
+    #exportCsvBtn:hover { background-color: #1e88e5; }
+    #exportJsonBtn { background-color: #FF9800; }
+    #exportJsonBtn:hover { background-color: #fb8c00; }
+    #deleteAllBtn { background-color: #f44336; }
+    #deleteAllBtn:hover { background-color: #e53935; }
+    #quoteCount { margin-top: 10px; font-size: 0.9em; color: #666; }
+    #searchInput { width: 100%; padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px; }
+    .pagination { display: flex; justify-content: center; margin-top: 10px; }
+    .page-btn { margin: 0 5px; padding: 5px 10px; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; }
+    .page-btn:hover { background-color: #f0f0f0; }
+    .page-btn.active { background-color: #4CAF50; color: white; }
+  </style>
+</head>
+<body>
+  <h2>JustADD</h2>
+  <input type="text" id="searchInput" placeholder="搜索...">
+  <div id="quoteCount">收藏数量: 0</div>
+  <ul id="quoteList"></ul>
+  <div class="pagination" id="pagination"></div>
+  <div class="button-container">
+    <button id="exportMarkdownBtn">导出为Markdown</button>
+    <button id="exportCsvBtn">导出为CSV</button>
+    <button id="exportJsonBtn">导出为JSON</button>
+    <button id="deleteAllBtn">删除全部</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

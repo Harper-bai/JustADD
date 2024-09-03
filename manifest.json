@@ -1,0 +1,49 @@
+{
+    "manifest_version": 3,
+    "name": "JustADD",
+    "version": "1.0.1",
+    "description": "一个用于管理和导出收藏文本的插件",
+    "default_locale": "zh_CN",
+    "permissions": ["storage", "activeTab", "contextMenus", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "192": "icons/icon192.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "192": "icons/icon192.png"
+    },
+    "commands": {
+      "save-selection": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+S",
+          "mac": "Command+Shift+S",
+          "windows": "Ctrl+Shift+S",
+          "chromeos": "Ctrl+Shift+S",
+          "linux": "Ctrl+Shift+S"
+        },
+        "description": "保存选中文本"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["content.css"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["icons/icon16.png", "icons/icon32.png", "icons/icon192.png"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
